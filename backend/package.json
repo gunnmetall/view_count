@@ -1,0 +1,22 @@
+{
+  "name": "find_user_view_count",
+  "version": "1.0.0",
+  "description": "A small program(Node.js and Mongo) to find total users and total unique users who viewed a product on daily/weekly/monthly/Custom date ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node seeds/index.js",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "Nodejs",
+    "Mongo"
+  ],
+  "author": "zapbuild",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.12"
+  }
+}

@@ -39,11 +39,14 @@ cd ..
 
 Ensure MongoDB is running (e.g. local install or MongoDB Atlas).
 
-To use a different database URL, edit **`backend/configs/db.js`** and set `DB_CONNECTION_STRING`:
+Configure the database URL via environment variable (recommended) or in code:
+
+1. **Recommended:** In the `backend` folder, copy `.env.example` to `.env` and set `MONGO_URI` to your connection string. Never commit `.env` or real credentials. If a MongoDB URI was ever committed to this repo, rotate the password and revoke any exposed credentials in your MongoDB Atlas (or other provider) dashboard immediately.
+2. **Alternatively:** Edit **`backend/configs/db.js`** and set the connection string. Use only the local example below in the repo; for Atlas or other hosted MongoDB, use a `.env` file.
 
 ```javascript
-const DB_CONNECTION_STRING = 'mongodb://localhost:27017/reports';
-// Or for Atlas: 'mongodb+srv://user:pass@cluster.mongodb.net/reports'
+// Example for local MongoDB only (safe to commit):
+const DB_CONNECTION_STRING = process.env.MONGO_URI || 'mongodb://localhost:27017/reports';
 ```
 
 ### 3. Seed data (optional)
